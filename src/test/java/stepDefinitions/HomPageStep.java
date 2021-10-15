@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 
 import commons.AbtractPage;
 import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import pageUI.HomePageUI;
 
@@ -18,8 +17,8 @@ public class HomPageStep extends AbtractPage {
 		this.driver=driver;
 	}
 	
-	@Given("^I open application$")
-	public void iOpenApplication()  {
+	@Given("^I open home page$")
+	public void iOpenApplicationHomePage()  {
 //		System.out.println("HomePage"+driver); 
 		//PageGeneratorManager.getHomePage(driver);
 	}
@@ -29,12 +28,10 @@ public class HomPageStep extends AbtractPage {
 		waitToElementClickable(driver, HomePageUI.ICON_MENUITEM);
 		clickToElement(driver, HomePageUI.ICON_MENUITEM);
 	}
-
-	@When("^I click to about us menuitem$")
-	public void iClickToAboutUsMenuitem()  {
-		waitToElementClickable(driver, HomePageUI.ICON_MENUITEM);
-		clickToElement(driver, HomePageUI.ICON_MENUITEM);
-		//PageGeneratorManager.getAbouUsPage(driver);
+	@When("^I click to accept cooking alert$")
+	public void iClickToAcceptCookingAlert()  {
+	    waitToElementClickable(driver, HomePageUI.ACCEPT_COOKIES_BUTTON);
+	    clickToElement(driver, HomePageUI.ACCEPT_COOKIES_BUTTON);
 	}
 
 }

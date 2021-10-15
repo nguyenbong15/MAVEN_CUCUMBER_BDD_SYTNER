@@ -315,12 +315,27 @@ public class AbtractPage {
 			explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getXpath(locator)));
 		}
 		
-		
 		public void waitToElementPresent(WebDriver driver, String locator,int number) {
 			explicitWait = new WebDriverWait(driver, GlobalConstant.LONG_TIME);
 			explicitWait.until(ExpectedConditions.numberOfElementsToBe(getXpath(locator),number));
 
 		}
 		
+		public String getDynamicLocator(String locator, String... values) {
+			return String.format(locator,(Object[]) values);
+		}
+		public void waitToElementClickable (WebDriver driver,String locator,String... values) {
+			explicitWait=new WebDriverWait(driver, GlobalConstant.LONG_TIME);
+			explicitWait.until(ExpectedConditions.elementToBeClickable(getXpath(getDynamicLocator(locator, values))));
+		}
+		
+		public void waitToElementVisible (WebDriver driver,String locator,String... values) {
+			explicitWait=new WebDriverWait(driver, GlobalConstant.LONG_TIME);
+			explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getXpath(getDynamicLocator(locator, values))));
+		}
+		
+		public void clickToElement(WebDriver driver ,String locator,String... values) {
+			getElement(driver, getDynamicLocator(locator, values)).click();
+		}
 		
 	}

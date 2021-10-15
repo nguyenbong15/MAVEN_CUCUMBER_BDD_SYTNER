@@ -83,7 +83,7 @@
 				<version>2.18.1</version>
 				<configuration>
 					<includes>
-						<include>**/*/CucumberTestRunner.java</include>
+						<include>**/*/sytnerRunner.java</include>
 					</includes>
 				</configuration>
 			</plugin>
@@ -101,7 +101,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<projectName>SELENIUM ONLINE - BANK GURU</projectName>
+							<projectName>CUCUMBER_SYTNER</projectName>
 							<outputDirectory>${project.build.directory}/site/cucumber-reporting</outputDirectory>
 							<cucumberOutput>${project.build.directory}/site/cucumber.json</cucumberOutput>
 							<enableFlashCharts>true</enableFlashCharts>

@@ -12,7 +12,7 @@ import cucumber.api.junit.Cucumber;
 	   monochrome=true,
 	  // plugin ={"pretty", "htmltarget/site/cucumber-report-default", "json:target/site/cucumber.json"},
 	   snippets = SnippetType.CAMELCASE,
-	   tags ={"@about_us_menuitem"}
+	   tags ={"@menuitem"}
 )
 public class sytnerRunner {
 
